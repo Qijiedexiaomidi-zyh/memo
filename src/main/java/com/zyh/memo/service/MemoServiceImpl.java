@@ -51,6 +51,11 @@ public class MemoServiceImpl implements MemoService {
         return memoMapper.search(page,keyword,now,level);
     }
 
+    @Override
+    public int deleteMemo(Long id) {
+        return memoMapper.deleteById(id);
+    }
+
     //获得flag天后的时间
     private Date getNextDay(Date date, int flag) {
         Calendar calendar = Calendar.getInstance();

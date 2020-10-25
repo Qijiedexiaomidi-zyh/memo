@@ -22,4 +22,6 @@ public interface MemoService {
     IPage<Memo> listDeadMemo(IPage<Memo> page, Date now);
 
     IPage<Memo> search(IPage<Memo> page, String keyword,Date now,Integer level);
+
+    int deleteMemo(Long id);
 }

@@ -128,4 +128,20 @@ public class MemoController {
         logger.info("查询出来的所有已过期的备忘录数据："+memoByPage.getRecords());
         return "listMemo";
     }
+
+    /**
+     * 待办事项的删除
+     * @param id
+     * @return
+     */
+    @RequestMapping("/deleteMemo")
+    public String deleteMemo(Long id){
+        int row = memoService.deleteMemo(id);
+        if (row > 0){
+            logger.info("删除数据成功");
+        }else {
+            logger.info("删除数据失败");
+        }
+        return "redirect:/memo/listMemo";
+    }
 }

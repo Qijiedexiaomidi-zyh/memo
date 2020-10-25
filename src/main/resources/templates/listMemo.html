@@ -51,9 +51,9 @@
                                th:href="@{/memo/findMemoById(id=${memo.id})}">
                                 <span class="icon-edit"></span> 查看</a>
 
-                            <a class="button border-main"
-                               th:href="@{/memo/gotoUpdate(id=${memo.id})}">
-                                <span class="icon-edit"></span> 修改</a>
+<!--                            <a class="button border-main"-->
+<!--                               th:href="@{/memo/gotoUpdate(id=${memo.id})}">-->
+<!--                                <span class="icon-edit"></span> 修改</a>-->
 
                             <a class="button border-red" th:onclick="del([[${memo.id}]]);">
                                 <span class="icon-trash-o"></span> 删除</a>
@@ -83,10 +83,10 @@
 </form>
 <script type="text/javascript">
 
-    function del(anno_id){
+    function del(id){
         if(confirm("您确定要删除吗?")){
             alert("删除成功！");
-            window.location.href = "/announce/deleteAnnounce?anno_id=" + anno_id;
+            window.location.href = "/memo/deleteMemo?id=" + id;
         }else {
             alert("删除失败");
             window.location.reload();
