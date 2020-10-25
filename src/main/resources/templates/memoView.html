@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/pintuer.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/pintuer.js}"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head"><strong><span class="icon-key"></span> 查看备忘录</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" action="">
+
+            <div class="form-group">
+                <div class="label">
+                    <label >备忘录名称：</label>
+                </div>
+                <div class="field">
+                    <label style="line-height:33px;">
+
+                        <input class="input w50" readonly type="text" name="name" size="50" th:value="${memo.name}" data-validate="required:请输入学生姓名" />
+                    </label>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录内容：</label>
+                </div>
+                <div class="field">
+                    <input class="input w50" readonly type="text" style="width: 500px;height: 100px;" th:value="${memo.content}" name="content" data-validate="required:请输入公告内容" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录信息等级：</label>
+                </div>
+                <div class="field">
+                    <input class="input w50" readonly type="text" style="width: 500px;height: 100px;" th:value="${memo.level}" name="level" data-validate="required:请输入公告内容" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录创建时间：</label>
+                </div>
+                <div class="field">
+                    <input class="input w50" readonly type="text" th:value="${#dates.format(memo.createTime,'yyyy-MM-dd HH:mm:ss')}" name="createTime" data-validate="required:请输入日期" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录截止时间：</label>
+                </div>
+                <div class="field">
+                    <input class="input w50" readonly type="text" th:value="${#dates.format(memo.deadTime,'yyyy-MM-dd HH:mm:ss')}" name="deadTime" data-validate="required:请输入日期" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <a class="button border-main" th:href="@{/memo/listMemo}"> 返回</a>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+</body></html>
+

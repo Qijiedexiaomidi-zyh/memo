@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="zh-cn" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <meta name="renderer" content="webkit">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/css/pintuer.css}">
+    <link rel="stylesheet" th:href="@{/css/admin.css}">
+    <script th:src="@{/js/jquery.js}"></script>
+    <script th:src="@{/js/pintuer.js}"></script>
+</head>
+<body>
+<div class="panel admin-panel">
+    <div class="panel-head" id="add"><strong><span class="icon-pencil-square-o"></span>添加备忘录</strong></div>
+    <div class="body-content">
+        <form method="post" class="form-x" th:action="@{/memo/addMemo}">
+
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录名称：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" value="" name="name" data-validate="required:请输入备忘录名称" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录内容：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" style="width: 500px;height: 100px;" name="content" data-validate="required:请输入备忘录内容" />
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录信息等级：</label>
+                </div>
+                <div class="field">
+                    <label style="line-height:33px;">
+                        <input type="radio" name="level" value="1" size="50" placeholder="请输入备忘录信息等级" data-validate="required:请输入备忘录信息等级" checked/>一般
+                        <input type="radio" name="level" value="2" size="50" placeholder="请输入备忘录信息等级" data-validate="required:请输入备忘录信息等级" />重要
+                        <input type="radio" name="level" value="3" size="50" placeholder="请输入备忘录信息等级" data-validate="required:请输入备忘录信息等级" />紧急
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label>备忘录截止时间：</label>
+                </div>
+                <div class="field">
+                    <input type="text" class="input w50" name="flag" data-validate="required:请输入备忘录截止时间" />&nbsp;&nbsp;<p style="color: red">（天后）</p>
+                    <div class="tips"></div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="label">
+                    <label></label>
+                </div>
+                <div class="field">
+                    <button class="button bg-main icon-check-square-o" type="submit" > 提交</button>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <button class="button bg-main icon-check-square-o" type="reset"> 重置</button>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
